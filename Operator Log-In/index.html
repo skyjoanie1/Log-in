@@ -1,0 +1,131 @@
+<!--Skylar Baumgartner-->
+<!--this tell the browser what type of document to expect-->
+<!DOCTYPE html>
+<!--starts the HTML document-->
+<html>
+<!--This starts the head section, good place for page level styles, and javascripts-->
+
+<head>
+    <!--This is the title in the tab on the browser-->
+    <title> Login Master </title>
+    <!--This is to refer back to our .css page-->
+    <link rel="stylesheet" href=".css" />
+    <!--start javascript section-->
+    <script>
+        //This will create a function to validate the user
+        function validateUser(firstName, lastName) {
+            //get the users first and last name
+            var firstName = document.getElementById("firstName").value;
+            var lastName = document.getElementById("lastName").value;
+            //now lets concatenate the first and last name and display it to the user in an alert
+            var fullName = firstName + " " + lastName;
+            alert("Welcome " + fullName);
+            //lets validate the length of the full name
+            if (fullName.length > 20) {
+                //Display an error message to the user if name is more than 20 characters long
+                alert("Your Full Name must be less than 20 characters long")
+
+
+            }
+            else {
+                //Full Name is less than 20 so welcome them in
+                alert("All Set, Space Star!! Please input your Badge Number to proceed. ");
+
+            }
+        }
+        function validateBadge(badgeNumber) {
+            var badgeNumber = document.getElementById("badgeNumber").value;
+            alert("Thank You, Space Star: " + badgeNumber);
+            if (badgeNumber.length > 3 || badgeNumber.length < 3) {
+                alert("Woah there, Space Star! You need to put in your Badge Number! It must be 3 numbers long! ")
+            }
+            if (badgeNumber.length == 3) {
+                alert("Thank you, Space Star:" + " " + badgeNumber + " " + "You may proceed!")
+            }
+        }
+
+    </script>
+    <style>
+        body {
+            background-image: url("space\ background\ copy.png");
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            color: azure;
+            text-align: center;
+        }
+
+        .footer {
+            background-color: #1901a1;
+            text-align: center;
+            padding: 8px;
+        }
+
+        .header {
+            background-color: #1901a1;
+            text-align: center;
+            padding: 10px;
+        }
+
+        input[type=text] {
+            border: 2px solid rgb(2, 133, 9);
+            border-radius: 4px;
+            background-color: #3CBC8D;
+            color: white;
+        }
+
+        input[type=text]:focus {
+            border: 3px solid rgb(236, 78, 250);
+        }
+
+        input[type=submit] {
+            background-color: #88d9ff;
+            border:outset;
+            color: white;
+            padding: 8px 15px;
+            text-decoration: none;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<!--This ends the head sections-->
+<!--This starts the body in the document, this is the main content-->
+
+<body>
+    <!--This is the first header-->
+    <div class="header">
+        <h1> Login Master</h1>
+    </div>
+    <!--This is a paragraph-->
+    <p>This will let you get into the space station where there is lots of nice air.
+        If you are not authorized, you will be locked out of the space station where the air is thin!</p>
+    <br /><br /><br />
+    <!--create a text box for user first name-->
+    <input type="text" id="firstName" placeholder="First Name">
+    <!--create a text box for user last name-->
+    <input type="text" id="lastName" placeholder="Last Name">
+    <!--this is the code to put in a button-->
+    <input type="submit" value="Submit" onclick="validateUser(firstName, lastName)">
+    <br /><br /><br />
+    <br /><br /><br />
+    <!--Badge Number-->
+    <input type="text" id="badgeNumber" placeholder="Badge Number">
+    <input type="submit" value="Submit" onclick="validateBadge(badgeNumber)">
+    <br /><br /><br />
+        <input type="submit" value="Proceed" onclick="window.location.href='/Users/SKYBAUMG/Documents/Intro%20to%20Programming/Blast-Off-2/index-2.html'">
+        
+    <br /><br /><br />
+    <img src="astronaught cut .gif">
+    <br /><br /><br />
+    <br /><br /><br />
+    <br /><br /><br />
+    <div class="footer">
+        <p>End of the page, Space Star!</p>
+    </div>
+
+</body>
+<!--This is the end of the body in the document-->
+
+</html>
+<!--ends HTML document-->
